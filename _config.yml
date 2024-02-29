@@ -12,7 +12,7 @@ logo: /images/logo.svg
 
 # links
 links:
-  Github: https://github.com/xbmlz
+  Github: https://github.com/abhishekg999
   # ZhiHu:
   # Twitter:
   # Weibo:
@@ -50,7 +50,7 @@ giscus:
 
 # maple
 maple:
-  enable: true
+  enable: false
   # fall leaf count
   count: 10
   # 0-1
