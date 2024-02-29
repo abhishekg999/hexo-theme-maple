@@ -61,9 +61,9 @@ function registerGoTop() {
     $('#scrollpercent>span').html(scrollPercentMaxed);
   });
 
-  $top.on('click', function () {
-    $('body').velocity('scroll');
-  });
+$top.on('click', function () {
+    $('html, body').animate({scrollTop: 0}, 500);
+});
 }
 
 // copy code
