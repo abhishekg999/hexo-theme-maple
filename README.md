@@ -1,3 +1,5 @@
+# Modified Theme
+
 <p align='center'>
   <img src='https://raw.githubusercontent.com/xbmlz/hexo-theme-maple/main/source/images/logo.svg' alt='Hexo-theme-maple' width='120'/>
 </p>
