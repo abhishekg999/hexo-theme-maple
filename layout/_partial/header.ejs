@@ -1,54 +1,64 @@
 <header class="fixed w-full px-5 py-1 z-10 backdrop-blur-xl backdrop-saturate-150 border-b border-black/5">
-  <div class="max-auto">
-    <nav class="flex items-center text-base">
-      <a href="<%- config.root %>" class="group">
-        <h2 class="font-medium tracking-tighterp text-l p-2">
-          <img class="w-5 mr-2 inline-block transition-transform group-hover:rotate-[30deg]" id="logo" src="<%- theme.logo %>" alt="<%- config.title %>" />
-          <%= config.title %>
-        </h2>
-      </a>
-      <div id="header-title" class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
-        <%- page.title %>
-      </div>
-      <div class="flex-1"></div>
-      <div class="flex items-center gap-3">
-        <% for (var i in theme.nav){ %>
-          <a class="hidden sm:flex" href="<%- url_for(theme.nav[i]) %>"><%= i %></a>
-        <% } %>
-        <% if (theme.links !== undefined) { %>
-          <% for (var key in theme.links) { %>
-            <a class="w-5 h-5 hidden sm:flex" title="<%- key %>" href="<%= theme.links[key] %>">
-              <iconify-icon width="20" icon="ri:<%- key.toLowerCase() %>-line"></iconify-icon>
+    <div class="max-auto">
+        <nav class="flex items-center text-base">
+            <a href="<%- config.root %>" class="group">
+                <h2 class="font-medium tracking-tighterp text-l p-2">
+                    <!-- <img class="w-5 mr-2 inline-block transition-transform group-hover:rotate-[30deg]" id="logo" src="<%- theme.logo %>" alt="<%- config.title %>" /> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="w-10 inline-block transition-transform group-hover:scale-125"
+                        stroke-miterlimit="10" viewBox="0 0 1123 1072" fill-rule="nonzero" stroke-linecap="round"
+                        stroke-linejoin="round" style="fill: none; stroke: #67d78e; stroke-width: 25;">
+                        <path
+                            d="M706.763 591.198C487.108 734.611 271.782 630.654 245.675 587.593C245.675 587.593 243.241 461.371 286.977 398.907C286.977 398.907 275.227 359.998 297.734 311.221C297.734 311.221 344.121 303.407 386.147 325.166C386.147 325.166 475.02 281.754 586.899 316.732C586.899 316.732 651.192 275.357 707.316 275.891C707.316 275.891 722.547 343.267 712.65 381.429C712.65 381.429 732.389 410.685 740.274 448.182C740.274 448.182 912.349 523.818 832.191 757.558C832.191 757.558 785.408 768.211 763.526 760.355C763.526 760.355 791.888 714.947 793.129 609.486C793.129 609.486 793.62 771.895 723.623 803.366C723.623 803.366 651.23 813.887 622.556 801.725C622.556 801.725 617.352 726.491 619.536 708.958L619.295 742.611C619.295 742.611 474.538 748.03 421.751 699.374L451.38 718.183C454.827 763.896 427.123 789.498 427.123 789.498C427.123 789.498 348.064 794.96 337.774 788.237C337.774 788.237 312.613 771.607 296.482 625.491">
+                        </path>
+                    </svg>
+                    <%= config.title %>
+                </h2>
             </a>
-          <% } %>
-        <% } %>
-        <a class="w-5 h-5 hidden sm:flex" title="<%- key %>" href="rss2.xml">
-          <iconify-icon width="20" icon="ri:rss-line"></iconify-icon>
-        </a>
-        <a class="w-5 h-5" title="toggle theme" id="toggle-dark">
-          <iconify-icon width="20" icon="" id="theme-icon"></iconify-icon>
-        </a>
-      </div>
-      <div class="flex items-center justify-center gap-3 ml-3 sm:hidden">
-        <span class="w-5 h-5" aria-hidden="true" role="img" id="open-menu">
-          <iconify-icon width="20" icon="carbon:menu" ></iconify-icon>
-        </span>
-        <span class="w-5 h-5 hidden" aria-hidden="true" role="img" id="close-menu">
-          <iconify-icon  width="20" icon="carbon:close" ></iconify-icon>
-        </span>
-      </div>
-    </nav>
-  </div>
+            <div id="header-title"
+                class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
+                <%- page.title %>
+            </div>
+            <div class="flex-1"></div>
+            <div class="flex items-center gap-3">
+                <% for (var i in theme.nav){ %>
+                    <a class="hidden sm:flex" href="<%- url_for(theme.nav[i]) %>">
+                        <%= i %>
+                    </a>
+                    <% } %>
+                        <% if (theme.links !==undefined) { %>
+                            <% for (var key in theme.links) { %>
+                                <a class="w-5 h-5 hidden sm:flex" title="<%- key %>" href="<%= theme.links[key] %>">
+                                    <iconify-icon width="20" icon="ri:<%- key.toLowerCase() %>-line"></iconify-icon>
+                                </a>
+                                <% } %>
+                                    <% } %>
+                                        <a class="w-5 h-5" title="toggle theme" id="toggle-dark">
+                                            <iconify-icon width="20" icon="" id="theme-icon"></iconify-icon>
+                                        </a>
+            </div>
+            <div class="flex items-center justify-center gap-3 ml-3 sm:hidden">
+                <span class="w-5 h-5" aria-hidden="true" role="img" id="open-menu">
+                    <iconify-icon width="20" icon="carbon:menu"></iconify-icon>
+                </span>
+                <span class="w-5 h-5 hidden" aria-hidden="true" role="img" id="close-menu">
+                    <iconify-icon width="20" icon="carbon:close"></iconify-icon>
+                </span>
+            </div>
+        </nav>
+    </div>
 </header>
 <div id="menu-panel" class="h-0 overflow-hidden sm:hidden fixed left-0 right-0 top-12 bottom-0 z-10">
-  <div id="menu-content" class="relative z-20 bg-white/80 px-6 sm:px-8 py-2 backdrop-blur-xl -translate-y-full transition-transform duration-300">
-    <ul class="nav flex flex-col sm:flex-row text-sm font-medium">
-      <% for (var i in theme.nav){ %>
-        <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
-          <a href="<%- url_for(theme.nav[i]) %>" class="flex h-12 sm:h-auto items-center"><%= i %></a>
-        </li>
-      <% } %>
-    </ul>
-  </div>
-  <div class="mask bg-black/20 absolute inset-0"></div>
+    <div id="menu-content"
+        class="relative z-20 bg-white/80 px-6 sm:px-8 py-2 backdrop-blur-xl -translate-y-full transition-transform duration-300">
+        <ul class="nav flex flex-col sm:flex-row text-sm font-medium">
+            <% for (var i in theme.nav){ %>
+                <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
+                    <a href="<%- url_for(theme.nav[i]) %>" class="flex h-12 sm:h-auto items-center">
+                        <%= i %>
+                    </a>
+                </li>
+                <% } %>
+        </ul>
+    </div>
+    <div class="mask bg-black/20 absolute inset-0"></div>
 </div>

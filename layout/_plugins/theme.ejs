@@ -17,23 +17,6 @@
     const isDark = document.documentElement.classList.contains("dark");
     $("#theme-icon").attr("icon", isDark ? "ri:moon-line" : "ri:sun-line");
 
-    function toggleGiscusTheme() {
-      const isDark = document.documentElement.classList.contains("dark");
-      const giscusFrame = document.querySelector("iframe.giscus-frame");
-      if (giscusFrame) {
-        giscusFrame.contentWindow.postMessage(
-          {
-            giscus: {
-              setConfig: {
-                theme: isDark ? "dark" : "light",
-              },
-            },
-          },
-          "https://giscus.app"
-        );
-      }
-    }
-
 
     // toggle dark mode
     function toggleDark() {
@@ -47,7 +30,6 @@
       } else {
         localStorage.setItem("hexo-color-scheme", isDark ? "dark" : "light");
       }
-      toggleGiscusTheme();
     }
     $("#toggle-dark").click(toggleDark);
 
@@ -62,7 +44,6 @@
             "icon",
             e.matches ? "ri:moon-line" : "ri:sun-line"
           );
-          toggleGiscusTheme();
         }
       });
   });
